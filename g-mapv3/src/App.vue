@@ -3,18 +3,21 @@
   <!-- <GoogleMap /> -->
   <br>
   <GooglePoint />
+  <GoogleDirection />
   
 </template>
 
 <script>
 // import GoogleMap from './components/GoogleMap.vue'
 import GooglePoint from './components/GooglePoint.vue'
+import GoogleDirection from './components/GoogleDirection.vue'
 
 export default {
   name: 'App',
   components: {
     // GoogleMap,
-    GooglePoint
+    GooglePoint,
+    GoogleDirection
   }
 }
 </script>
