@@ -35,40 +35,49 @@
 </template>
 
 <script>
-function initMap() {
-  const directionsService = new google.maps.DirectionsService();
-  const directionsRenderer = new google.maps.DirectionsRenderer();
-  const map = new google.maps.Map(document.getElementById("map"), {
-    zoom: 7,
-    center: { lat: 41.85, lng: -87.65 },
-  });
-  directionsRenderer.setMap(map);
+import { DirectionsService } from '@types/google.maps'
 
-  const onChangeHandler = function () {
-    calculateAndDisplayRoute(directionsService, directionsRenderer);
-  };
-  document.getElementById("start").addEventListener("change", onChangeHandler);
-  document.getElementById("end").addEventListener("change", onChangeHandler);
+export default{
+  methods:{
+    // mulai disini saya tidak tau bagaimana cara menggunakan function2 yang sudah disediakan di Google Maps API
+    
+  }
 }
-
-function calculateAndDisplayRoute(directionsService, directionsRenderer) {
-  directionsService
-    .route({
-      origin: {
-        query: document.getElementById("start").value,
-      },
-      destination: {
-        query: document.getElementById("end").value,
-      },
-      travelMode: google.maps.TravelMode.DRIVING,
-    })
-    .then((response) => {
-      directionsRenderer.setDirections(response);
-    })
-    .catch((e) => window.alert("Directions request failed due to " + status));
-}
-
 </script>
+// function initMap() {
+//   const directionsService = new google.maps.DirectionsService();
+//   const directionsRenderer = new google.maps.DirectionsRenderer();
+//   const map = new google.maps.Map(document.getElementById("map"), {
+//     zoom: 7,
+//     center: { lat: 41.85, lng: -87.65 },
+//   });
+//   directionsRenderer.setMap(map);
+
+//   const onChangeHandler = function () {
+//     calculateAndDisplayRoute(directionsService, directionsRenderer);
+//   };
+//   document.getElementById("start").addEventListener("change", onChangeHandler);
+//   document.getElementById("end").addEventListener("change", onChangeHandler);
+// }
+
+// function calculateAndDisplayRoute(directionsService, directionsRenderer) {
+//   directionsService
+//     .route({
+//       origin: {
+//         query: document.getElementById("start").value,
+//       },
+//       destination: {
+//         query: document.getElementById("end").value,
+//       },
+//       travelMode: google.maps.TravelMode.DRIVING,
+//     })
+//     .then((response) => {
+//       directionsRenderer.setDirections(response);
+//     })
+//     .catch((e) => window.alert("Directions request failed due to " + status));
+// }
+
+
 
 <style scoped>
     /* Always set the map height explicitly to define the size of the div
